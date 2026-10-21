@@ -5,7 +5,7 @@
 
   const product = root.dataset.productName || 'This garment';
   const brand = root.dataset.brandName || 'the designer';
-  const enquiryUrl = root.dataset.threadlineUrl || '/threadline-passport/threadline-enquiry.html';
+  const enquiryUrl = root.dataset.threadlineUrl || 'https://joygraham.github.io/threadline-passport/threadline-enquiry.html';
 
   const segments = [
     {
