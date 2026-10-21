@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Enquire with Threadline | Cultural Provenance Support</title>
+<style>
+:root{--ink:#28251f;--paper:#f7f4ee;--clay:#a65d45;--muted:#71695f;--line:#ded6cb}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
+header{padding:24px 6%;border-bottom:1px solid var(--line);font:22px Georgia,serif;letter-spacing:2px}
+main{max-width:760px;margin:65px auto;padding:0 24px 70px}
+.eyebrow{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--clay);font-weight:bold}
+h1{font:normal clamp(38px,6vw,60px)/1.05 Georgia,serif;margin:18px 0}
+p{font-size:14px;line-height:1.8;color:var(--muted)}
+.card{background:#fffdf9;border:1px solid var(--line);padding:clamp(22px,5vw,40px);margin-top:28px}
+label{display:block;margin:18px 0 7px;font-size:11px;letter-spacing:.6px;font-weight:bold}
+input,textarea,select{font:14px Arial;width:100%;padding:13px;border:1px solid #d8cfc2;background:white;color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+button{margin-top:22px;padding:16px 18px;width:100%;background:var(--ink);border:0;color:#fff;font-size:10px;letter-spacing:1.3px;cursor:pointer}
+.note{font-size:11px!important;background:#efe7dc;padding:12px;margin-top:18px}
+#feedback{display:none;padding:12px;background:#e8e8dc;font-size:12px;line-height:1.6;margin-top:15px}
+a{color:var(--clay)}footer{border-top:1px solid var(--line);padding:24px 6%;font-size:10px;letter-spacing:1px;color:var(--muted)}
+</style>
+</head>
+<body>
+<header>THREADLINE</header>
+<main>
+<div class="eyebrow">Cultural Provenance · Further enquiry</div>
+<h1>Go deeper into the story.</h1>
+<p>Threadline Collective works with designers to explore cultural context, material histories, craftsmanship, attribution and supporting evidence. Tell us what you would like to understand further.</p>
+<div class="card">
+<div class="eyebrow">Enquiry preview</div>
+<p><strong>Garment:</strong> <span id="product">The Heritage Weave, sample demo</span></p>
+<form id="enquiry">
+<label for="name">Your name</label><input id="name" name="name" placeholder="Name" required>
+<label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" required>
+<label for="interest">What would you like to enquire about?</label>
+<select id="interest" name="interest"><option>Cultural provenance research</option><option>Material and textile history</option><option>Craftsmanship and making</option><option>Authorship and attribution</option><option>Designer partnership</option></select>
+<label for="message">Additional context</label><textarea id="message" name="message" placeholder="Share your question or the information you are looking for."></textarea>
+<button type="submit">PREVIEW ENQUIRY ↗</button>
+<div id="feedback" role="status">This is a demonstration only. Your details have not been sent. A live Threadline enquiry flow will need a connected form service or inbox.</div>
+</form>
+<p class="note">DEMO ONLY. This form does not send or store personal information. A production site must connect this form to a monitored Threadline inbox or secure enquiry system.</p>
+</div>
+<p><a href="index.html">← Return to the product page demo</a></p>
+</main>
+<footer>THREADLINE COLLECTIVE · CULTURE · CRAFT · AUTHORSHIP</footer>
+<script>
+const params=new URLSearchParams(location.search);
+const p=params.get('product');
+if(p) document.getElementById('product').textContent=p;
+document.getElementById('enquiry').addEventListener('submit',function(e){e.preventDefault();document.getElementById('feedback').style.display='block';});
+</script>
+</body>
+</html>
